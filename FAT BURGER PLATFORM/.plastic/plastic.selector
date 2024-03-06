@@ -1,0 +1,4 @@
+repository "FAT BURGER PLATFORM@GameJam_TCW@cloud"
+  path "/"
+    br "/main"
+    co "/main"
