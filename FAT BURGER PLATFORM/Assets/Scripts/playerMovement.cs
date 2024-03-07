@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class playerMovement : MonoBehaviour
-{private float horizontal;
+public class PlayerMovement : MonoBehaviour
+{
+    private float horizontal;
     private float speed = 8f;
     private float jumpingPower = 16f;
     private bool isFacingRight = true;
@@ -37,8 +38,11 @@ public class playerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        bool grounded = Physics2D.OverlapCircle(groundCheck.position, 1.25f, groundLayer);
+        Debug.Log("Grounded: " + grounded);
+        return grounded;
     }
+
 
     private void Flip()
     {
@@ -51,3 +55,4 @@ public class playerMovement : MonoBehaviour
         }
     }
 }
+
